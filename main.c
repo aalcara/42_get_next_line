@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 00:31:25 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/02/26 00:27:56 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/02 19:58:56 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 	int open(const char *pathname, int flags);
 		O_RDONLY: flag to read only
-		
+
 		return: return the fd used or -1 on error.
-		
+
 
 */
 
@@ -33,7 +33,7 @@ int				main(void)
 	char 	*line;
 	int		gnl_react;
 	int 	n_line = 1;
-	
+
 	fd1 = open("test1.txt", O_RDONLY);
 	gnl_react = get_next_line(fd1, &line);
 	printf("\nfd1: %d\t return = %d", fd1, gnl_react);
