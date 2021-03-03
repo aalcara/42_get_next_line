@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 00:31:25 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/02 19:58:56 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:40:37 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ int				main(void)
 
 	fd1 = open("test1.txt", O_RDONLY);
 	gnl_react = get_next_line(fd1, &line);
-	printf("\nfd1: %d\t return = %d", fd1, gnl_react);
+	// printf("\nfd1: %d\t return = %d", fd1, gnl_react);
 	while (gnl_react > 0)
 	{
 		printf("\nline [%d]: %s\t return = %d", n_line, line, gnl_react);
 		n_line++;
 		gnl_react = get_next_line(fd1, &line);
 	}
+	printf("\nline [%d]: %s\t return = %d", n_line, line, gnl_react);
 	return 0;
 }

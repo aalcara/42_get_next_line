@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/02 21:51:56 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/03 15:32:55 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,30 @@ size_t		ft_strlen(const char *s)
 	int i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (*(s + i) != '\0')
+		i++;
+	return (i);
+}
+
+void		*ft_calloc(size_t nmemb, size_t size)
+{
+	unsigned char	*p;
+	unsigned long	i;
+	unsigned long	total;
+
+	i = 0;
+	total = nmemb * size;
+	p = (unsigned char *)malloc(total);
+	if (p == NULL)
+		return (NULL);
+	while (i < total)
 	{
+		*(p + i) = 0;
 		i++;
 	}
-	return (i);
+	return ((void *)p);
 }
 
 char		*ft_substr(char const *s, unsigned int start, size_t len)
@@ -53,26 +72,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	return (NULL);
 }
 
-void		*ft_calloc(size_t nmemb, size_t size)
-{
-	unsigned char	*p;
-	unsigned long	i;
-	unsigned long	total;
-
-	i = 0;
-	total = nmemb * size;
-	p = (unsigned char *)malloc(total);
-	if (p == NULL)
-		return (NULL);
-	while (i < total)
-	{
-		*(p + i) = 0;
-		i++;
-	}
-	return ((void *)p);
-}
-
-char			*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin(char const *s1, char const *s2)
 {
 	unsigned int		i;
 	unsigned int		j;
@@ -81,12 +81,14 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 && !s2)
+		return (0);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	substr = malloc((len + 1) * sizeof(char));
-	if (substr == NULL)
+	if (!(substr = malloc((len + 1) * sizeof(char))))
 		return (NULL);
-	while (*(s1 + i) != '\0')
+	while (i < ft_strlen(s1))
 	{
+		// printf("91: substr = %s, s1 = %s\n", substr, s1); //!remover
 		*(substr + i) = *(s1 + i);
 		i++;
 	}
