@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:47 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/03 15:14:57 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/03 16:57:07 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@
 # include <stdlib.h>
 # include <stdio.h> //!remover
 
-int				get_next_line(int fd, char **line);
 size_t			ft_strlen(const char *s);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
-
-//todo conferir funções!!!
+char			*first_line(char *buffer);
+char			*new_buffer(char *buffer);
+int				has_new_line(char *marker);
+int				get_next_line(int fd, char **line);
 
 #endif
