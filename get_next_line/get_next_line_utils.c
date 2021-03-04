@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/03 15:32:55 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/03 22:22:06 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	while (i < ft_strlen(s1))
 	{
-		// printf("91: substr = %s, s1 = %s\n", substr, s1); //!remover
 		*(substr + i) = *(s1 + i);
 		i++;
 	}
