@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/03 22:22:06 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:36:35 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	return (NULL);
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	unsigned int		i;
 	unsigned int		j;
@@ -97,5 +97,6 @@ char		*ft_strjoin(char const *s1, char const *s2)
 		j++;
 	}
 	*(substr + i + j) = '\0';
+	free((char *)s1);
 	return (substr);
 }

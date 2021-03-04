@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:56 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/03 22:22:33 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:36:52 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int				get_next_line(int fd, char **line)
 			return (-1);
 		}
 		marker[read_return] = '\0';
-		buffer = ft_strjoin(buffer, marker);
+		buffer = ft_strjoin_gnl(buffer, marker);
 	}
 	free(marker);
 	*line = first_line(buffer);

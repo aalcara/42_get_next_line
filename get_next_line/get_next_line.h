@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:47 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/03 22:22:49 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/04 12:37:00 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 size_t			ft_strlen(const char *s);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strjoin_gnl(char const *s1, char const *s2);
 char			*first_line(char *buffer);
 char			*new_buffer(char *buffer);
 int				has_new_line(char *marker);
