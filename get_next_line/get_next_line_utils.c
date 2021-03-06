@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/05 21:16:41 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/05 23:56:14 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,35 +71,6 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (NULL);
 }
-
-/*char		*ft_strjoin_gnl(char const *s1, char const *s2)
-{
-	unsigned int		i;
-	unsigned int		j;
-	unsigned int		len;
-	char				*substr;
-
-	i = 0;
-	j = 0;
-	if (!s1 && !s2)
-		return (0);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(substr = malloc((len + 1) * sizeof(char))))
-		return (NULL);
-	while (i < ft_strlen(s1))
-	{
-		*(substr + i) = *(s1 + i);
-		i++;
-	}
-	while (*(s2 + j) != '\0')
-	{
-		*(substr + i + j) = *(s2 + j);
-		j++;
-	}
-	*(substr + i + j) = '\0';
-	free((char *)s1);
-	return (substr);
-}*/
 
 char		*ft_strjoin_gnl(char *s1, char *s2)
 {
