@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/05 20:58:25 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/05 21:11:54 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 	size_t			len;
 	char			*substr;
 	char			*pointer;
+	char			*s1free;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(substr = malloc((len + 1) * sizeof(char))))
@@ -114,6 +115,7 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 		return (NULL);
 	}
 	pointer = substr;
+	s1free = s1;
 	if (s1)
 		while (*s1)
 			*pointer++ = *s1++;
@@ -121,7 +123,7 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 		while (*s2)
 			*pointer++ = *s2++;
 	*pointer = '\0';
-	free(s1);
+	free(s1free);
 	return (substr);
 }
 /*
