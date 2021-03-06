@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/04 12:36:35 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/05 20:58:25 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len)
 	return (NULL);
 }
 
-char		*ft_strjoin_gnl(char const *s1, char const *s2)
+/*char		*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	unsigned int		i;
 	unsigned int		j;
@@ -99,4 +99,57 @@ char		*ft_strjoin_gnl(char const *s1, char const *s2)
 	*(substr + i + j) = '\0';
 	free((char *)s1);
 	return (substr);
+}*/
+
+char		*ft_strjoin_gnl(char *s1, char *s2)
+{
+	size_t			len;
+	char			*substr;
+	char			*pointer;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	if (!(substr = malloc((len + 1) * sizeof(char))))
+	{
+		free(s1);
+		return (NULL);
+	}
+	pointer = substr;
+	if (s1)
+		while (*s1)
+			*pointer++ = *s1++;
+	if (s2)
+		while (*s2)
+			*pointer++ = *s2++;
+	*pointer = '\0';
+	free(s1);
+	return (substr);
 }
+/*
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*str;
+	char	*s1free;
+	char	*ptr;
+	size_t	len1;
+	size_t	len2;
+
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	str = malloc(len1 + len2 + 1);
+	ptr = str;
+	if (!str)
+	{
+		free(s1);
+		return (0);
+	}
+	s1free = s1;
+	if (s1)
+		while (*s1)
+			*ptr++ = *s1++;
+	if (s2)
+		while (*s2)
+			*ptr++ = *s2++;
+	*ptr = 0;
+	free(s1free);
+	return (str);
+}*/
