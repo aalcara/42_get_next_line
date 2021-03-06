@@ -6,7 +6,7 @@
 /*   By: aalcara- <aalcara-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 23:30:59 by aalcara-          #+#    #+#             */
-/*   Updated: 2021/03/05 21:11:54 by aalcara-         ###   ########.fr       */
+/*   Updated: 2021/03/05 21:16:41 by aalcara-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 	size_t			len;
 	char			*substr;
 	char			*pointer;
-	char			*s1free;
+	char			*s1zero;
 
 	len = ft_strlen(s1) + ft_strlen(s2);
 	if (!(substr = malloc((len + 1) * sizeof(char))))
@@ -115,7 +115,7 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 		return (NULL);
 	}
 	pointer = substr;
-	s1free = s1;
+	s1zero = s1;
 	if (s1)
 		while (*s1)
 			*pointer++ = *s1++;
@@ -123,35 +123,6 @@ char		*ft_strjoin_gnl(char *s1, char *s2)
 		while (*s2)
 			*pointer++ = *s2++;
 	*pointer = '\0';
-	free(s1free);
+	free(s1zero);
 	return (substr);
 }
-/*
-char	*ft_strjoin(char *s1, char *s2)
-{
-	char	*str;
-	char	*s1free;
-	char	*ptr;
-	size_t	len1;
-	size_t	len2;
-
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	str = malloc(len1 + len2 + 1);
-	ptr = str;
-	if (!str)
-	{
-		free(s1);
-		return (0);
-	}
-	s1free = s1;
-	if (s1)
-		while (*s1)
-			*ptr++ = *s1++;
-	if (s2)
-		while (*s2)
-			*ptr++ = *s2++;
-	*ptr = 0;
-	free(s1free);
-	return (str);
-}*/
